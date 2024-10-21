@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                'pytest ./tests/test_sample.py'
+                powershell 'pytest ./tests/test_sample.py'
             }
             post {
                 success {
@@ -33,7 +33,7 @@ pipeline {
     }
     post {
         always {
-            'docker compose down'
+            powershell 'docker compose down'
         }
     }
 }
