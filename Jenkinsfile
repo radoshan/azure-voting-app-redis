@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Docker Build') {
             steps {
-                powershell:(script: 'docker compose build')
+                bat 'docker compose build'
             }
         }
     }
