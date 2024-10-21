@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Docker Build') {
             steps {
-                bat 'docker compose build'
+                sh(script: 'docker compose')
             }
         }
     }
