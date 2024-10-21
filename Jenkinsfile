@@ -7,11 +7,6 @@ pipeline {
                 echo "$GIT_BRANCH"
             }
         }
-        stage('Docker Build - sh') {
-            steps {
-                sh(script: 'docker compose')
-            }
-        }
         stage('Docker Build - bat') {
             steps {
                 bat 'docker compose build'
@@ -20,6 +15,11 @@ pipeline {
         stage('Docker Build - powershell') {
             steps {
                 powershell 'docker compose build'
+            }
+        }
+        stage('Docker Build - sh') {
+            steps {
+                sh(script: 'docker compose')
             }
         }
     }
